@@ -1,13 +1,118 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@keyframes rotatePie {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.classWheel {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  border: 5px solid rgb(16, 14, 14);
+  border-radius: 100%;
+  background-color: rgb(234, 225, 225);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondOuterCircle {
+  position: absolute;
+  height: 380px;
+  width: 380px;
+  border: 5px solid rgb(16, 14, 14);
+  border-radius: 100%;
+  background-color: rgb(253, 187, 187);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(1000deg);
+  background: conic-gradient(
+    #ff0000 0% 25%,
+    /* Red slice: 25% */ #00ff00 25% 50%,
+    /* Green slice: 25% */ #0000ff 50% 75%,
+    /* Blue slice: 25% */ #ffff00 75% 100% /* Yellow slice: 25% */
+  );
+}
+
+.innerCircle {
+  height: 50px;
+  width: 50px;
+  border: 6px solid rgb(16, 16, 18);
+  border-radius: 50%;
+  background-color: rgb(232, 232, 234);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999 !important;
+  position: relative;
+}
+
+.innerArrow {
+  height: 180px;
+  width: 10px;
+  border: 1px solid black;
+  background-color: black;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  position: absolute;
+  bottom: 40%;
+}
+
+.secondOuterCircle span {
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+}
+
+.secondOuterCircle .red {
+  top: 25%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.secondOuterCircle .green {
+  top: 75%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.secondOuterCircle .blue {
+  top: 75%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.secondOuterCircle .yellow {
+  top: 25%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: black;
 }
